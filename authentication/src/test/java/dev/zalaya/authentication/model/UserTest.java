@@ -24,9 +24,13 @@ class UserTest {
     }
 
     @Test
-    void shouldInitializeIsVerifiedAsFalseWithConstructor() {
+    void shouldInitializeIsVerifiedAsFalse() {
         // Arrange
-        User user = new User(username, email, password);
+        User user = new User(
+            username,
+            email,
+            password
+        );
 
         // Assert
         assertFalse(user.isVerified());
