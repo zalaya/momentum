@@ -9,6 +9,11 @@
     <groupId>dev.zalaya</groupId>
     <artifactId>momentum</artifactId>
     <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>collector</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
