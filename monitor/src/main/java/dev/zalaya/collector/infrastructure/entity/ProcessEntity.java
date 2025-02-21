@@ -3,12 +3,16 @@ package dev.zalaya.collector.infrastructure.entity;
 import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@EqualsAndHashCode(exclude = {"memory", "path"})
 @Entity
 @Getter
+@NoArgsConstructor
 @Table(name = "processes", schema = "momentum")
-@AllArgsConstructor
 public class ProcessEntity {
 
     @Id
