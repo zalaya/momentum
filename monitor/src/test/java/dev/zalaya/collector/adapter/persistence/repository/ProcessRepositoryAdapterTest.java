@@ -17,6 +17,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -31,6 +32,27 @@ public class ProcessRepositoryAdapterTest {
 
     @InjectMocks
     private ProcessRepositoryAdapter adapter;
+
+    @Test
+    void save_shouldPersistProcess() {
+        // Arrange
+        ProcessEntity processEntity = new ProcessEntity(null, "process", "path/to/process", 100L);
+        Process process = new Process("process", "path/to/process", 100L);
+
+        // Mock
+        when(repository.save(processEntity)).thenReturn(processEntity);
+        when(mapper.toEntity(process)).thenReturn(processEntity);
+        when(mapper.toDomain(processEntity)).thenReturn(process);
+
+        // Act
+        Process savedProcess = adapter.save(process);
+
+        // Assert
+        verify(repository).save(processEntity);
+        assertNotNull(savedProcess.getName());
+        assertNotNull(savedProcess.getPath());
+        assertNotNull(savedProcess.getMemory());
+    }
 
     @Test
     void findAll_shouldFindAllProcesses() {
