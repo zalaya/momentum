@@ -1,4 +1,4 @@
-package dev.zalaya.collector.infrastructure.entity;
+package dev.zalaya.collector.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
 

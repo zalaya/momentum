@@ -1,7 +1,8 @@
-package dev.zalaya.collector.infrastructure.repository;
+package dev.zalaya.collector.infrastructure.persistence.repository;
 
-import dev.zalaya.collector.infrastructure.entity.ProcessEntity;
+import dev.zalaya.collector.infrastructure.persistence.entity.ProcessEntity;
 
+import dev.zalaya.collector.infrastructure.persistence.repository.ProcessJpaRepository;
 import jakarta.transaction.Transactional;
 
 import org.junit.jupiter.api.Test;
