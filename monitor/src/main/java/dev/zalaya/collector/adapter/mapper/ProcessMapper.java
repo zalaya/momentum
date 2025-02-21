@@ -2,9 +2,11 @@ package dev.zalaya.collector.adapter.mapper;
 
 import dev.zalaya.collector.domain.model.Process;
 import dev.zalaya.collector.infrastructure.persistence.entity.ProcessEntity;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ProcessMapper {
 
     public Process toDomain(ProcessEntity entity) {
