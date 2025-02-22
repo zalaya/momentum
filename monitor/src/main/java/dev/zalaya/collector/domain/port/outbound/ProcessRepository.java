@@ -6,9 +6,6 @@ import java.util.List;
 
 public interface ProcessRepository {
 
-    List<Process> findAll();
-    Process findById(Long id);
-    Process save(Process process);
-    List<Process> saveAll(List<Process> processes);
+    void saveAll(List<Process> processes);
 
 }
