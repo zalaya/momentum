@@ -4,8 +4,10 @@ import dev.zalaya.collector.adapter.mapper.OSProcessMapper;
 import dev.zalaya.collector.domain.model.Process;
 import dev.zalaya.collector.domain.port.inbound.ProcessAcquisitionPort;
 import dev.zalaya.collector.domain.port.outbound.ProcessRepository;
+
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+
 import oshi.SystemInfo;
 import oshi.software.os.OSProcess;
 import oshi.software.os.OperatingSystem;
