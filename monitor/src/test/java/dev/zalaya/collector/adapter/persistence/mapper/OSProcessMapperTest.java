@@ -1,6 +1,6 @@
 package dev.zalaya.collector.adapter.persistence.mapper;
 
-import dev.zalaya.collector.adapter.mapper.OSProcessMapper;
+import dev.zalaya.collector.infrastructure.adapter.mapper.OSProcessMapper;
 
 import dev.zalaya.collector.domain.model.Process;
 

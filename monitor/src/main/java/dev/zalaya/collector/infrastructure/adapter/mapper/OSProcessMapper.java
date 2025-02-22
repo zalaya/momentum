@@ -1,6 +1,7 @@
-package dev.zalaya.collector.adapter.mapper;
+package dev.zalaya.collector.infrastructure.adapter.mapper;
 
 import dev.zalaya.collector.domain.model.Process;
+
 import org.springframework.stereotype.Component;
 import oshi.software.os.OSProcess;
 

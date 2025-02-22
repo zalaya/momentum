@@ -1,6 +1,6 @@
 package dev.zalaya.collector.application.service;
 
-import dev.zalaya.collector.adapter.mapper.OSProcessMapper;
+import dev.zalaya.collector.infrastructure.adapter.mapper.OSProcessMapper;
 import dev.zalaya.collector.domain.model.Process;
 import dev.zalaya.collector.domain.port.inbound.ProcessAcquisitionPort;
 import dev.zalaya.collector.domain.port.outbound.ProcessRepository;
