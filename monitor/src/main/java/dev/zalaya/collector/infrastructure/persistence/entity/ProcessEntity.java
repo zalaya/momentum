@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@EqualsAndHashCode(exclude = {"memory", "path"})
+@EqualsAndHashCode(exclude = {"id", "memory"})
 @Entity
 @Getter
 @NoArgsConstructor

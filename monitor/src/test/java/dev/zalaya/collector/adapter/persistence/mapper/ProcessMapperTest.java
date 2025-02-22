@@ -23,61 +23,57 @@ class ProcessMapperTest {
     @Test
     void toDomain_shouldMapEntityToDomain() {
         // Assure
-        ProcessEntity entity = new ProcessEntity(1L, "process", "path/to/process", 100L);
-        Process expectedDomain = new Process("process", "path/to/process", 100L);
+        ProcessEntity processEntity = new ProcessEntity(1L, "process", "path/to/process", 100L);
+        Process expectedProcesses = new Process("process", "path/to/process", 100L);
 
         // Act
-        Process domain = mapper.toDomain(entity);
+        Process process = mapper.toDomain(processEntity);
 
         // Assure
-        assertEquals(expectedDomain, domain);
+        assertEquals(expectedProcesses, process);
     }
 
     @Test
     void toDomain_shouldMapEntitiesToDomains() {
         // Assure
-        ProcessEntity entity1 = new ProcessEntity(1L, "process1", "path/to/process1", 100L);
-        ProcessEntity entity2 = new ProcessEntity(2L, "process2", "path/to/process2", 200L);
-        List<ProcessEntity> entities = List.of(entity1, entity2);
-        Process expectedDomain1 = new Process("process1", "path/to/process1", 100L);
-        Process expectedDomain2 = new Process("process2", "path/to/process2", 200L);
-        List<Process> expectedDomains = List.of(expectedDomain1, expectedDomain2);
+        ProcessEntity processEntity = new ProcessEntity(1L, "process1", "path/to/process1", 100L);
+        List<ProcessEntity> processEntities = List.of(processEntity);
+        Process process = new Process("process1", "path/to/process1", 100L);
+        List<Process> expectedProcesses = List.of(process);
 
         // Act
-        List<Process> domains = mapper.toDomain(entities);
+        List<Process> processes = mapper.toDomain(processEntities);
 
         // Assure
-        assertEquals(expectedDomains, domains);
+        assertEquals(expectedProcesses, processes);
     }
 
     @Test
     void toEntity_shouldMapDomainToEntity() {
         // Assure
-        Process domain = new Process("process", "path/to/process", 100L);
-        ProcessEntity expectedEntity = new ProcessEntity(null, "process", "path/to/process", 100L);
+        Process process = new Process("process", "path/to/process", 100L);
+        ProcessEntity expectedProcessEntity = new ProcessEntity(null, "process", "path/to/process", 100L);
 
         // Act
-        ProcessEntity entity = mapper.toEntity(domain);
+        ProcessEntity processEntity = mapper.toEntity(process);
 
         // Assure
-        assertEquals(expectedEntity, entity);
+        assertEquals(expectedProcessEntity, processEntity);
     }
 
     @Test
     void toEntity_shouldMapDomainsToEntities() {
         // Assure
-        Process domain1 = new Process("process1", "path/to/process1", 100L);
-        Process domain2 = new Process("process2", "path/to/process2", 200L);
-        List<Process> domains = List.of(domain1, domain2);
-        ProcessEntity expectedEntity1 = new ProcessEntity(null, "process1", "path/to/process1", 100L);
-        ProcessEntity expectedEntity2 = new ProcessEntity(null, "process2", "path/to/process2", 200L);
-        List<ProcessEntity> expectedEntities = List.of(expectedEntity1, expectedEntity2);
+        Process process = new Process("process1", "path/to/process1", 100L);
+        List<Process> processes = List.of(process);
+        ProcessEntity processEntity = new ProcessEntity(null, "process1", "path/to/process1", 100L);
+        List<ProcessEntity> expectedProcessEntities = List.of(processEntity);
 
         // Act
-        List<ProcessEntity> entities = mapper.toEntity(domains);
+        List<ProcessEntity> processEntities = mapper.toEntity(processes);
 
         // Assure
-        assertEquals(expectedEntities, entities);
+        assertEquals(expectedProcessEntities, processEntities);
     }
 
 }

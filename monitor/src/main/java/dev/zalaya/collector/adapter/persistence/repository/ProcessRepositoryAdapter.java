@@ -54,10 +54,6 @@ public class ProcessRepositoryAdapter implements ProcessRepository {
     public List<Process> findByMemoryLessThan(Long memory) {
         List<ProcessEntity> processEntity = repository.findByMemoryLessThan(memory);
 
-        if (processEntity.isEmpty()) {
-            return List.of();
-        }
-
         return mapper.toDomain(processEntity);
     }
 
@@ -65,20 +61,12 @@ public class ProcessRepositoryAdapter implements ProcessRepository {
     public List<Process> findByMemoryGreaterThan(Long memory) {
         List<ProcessEntity> processEntity = repository.findByMemoryGreaterThan(memory);
 
-        if (processEntity.isEmpty()) {
-            return List.of();
-        }
-
         return mapper.toDomain(processEntity);
     }
 
     @Override
     public List<Process> findByMemoryBetween(Long minimumMemory, Long maximumMemory) {
         List<ProcessEntity> processEntity = repository.findByMemoryBetween(minimumMemory, maximumMemory);
-
-        if (processEntity.isEmpty()) {
-            return List.of();
-        }
 
         return mapper.toDomain(processEntity);
     }
