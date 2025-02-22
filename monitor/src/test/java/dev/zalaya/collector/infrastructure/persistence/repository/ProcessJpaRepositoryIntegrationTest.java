@@ -2,8 +2,6 @@ package dev.zalaya.collector.infrastructure.persistence.repository;
 
 import dev.zalaya.collector.infrastructure.persistence.entity.ProcessEntity;
 
-import jakarta.transaction.Transactional;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -20,7 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
-@Transactional
 class ProcessJpaRepositoryIntegrationTest {
 
     @Autowired
@@ -29,13 +26,25 @@ class ProcessJpaRepositoryIntegrationTest {
     @Test
     void save_shouldPersistProcess() {
         // Arrange
-        ProcessEntity process = new ProcessEntity(null, "process", "path/to/process", 100L);
+        ProcessEntity processEntity = new ProcessEntity(null, "process", "path/to/process", 100L);
 
         // Act
-        ProcessEntity savedProcess = repository.save(process);
+        ProcessEntity savedProcessEntity = repository.save(processEntity);
 
         // Assert
-        assertNotNull(savedProcess.getId());
+        assertNotNull(savedProcessEntity.getId());
+    }
+
+    @Test
+    void saveAll_shouldPersistProcesses() {
+        // Arrange
+        List<ProcessEntity> processEntities = List.of(new ProcessEntity(null, "process", "path/to/process", 100L));
+
+        // Act
+        List<ProcessEntity> savedProcessEntities = repository.saveAll(processEntities);
+
+        // Assert
+        assertNotNull(savedProcessEntities.get(0).getId());
     }
 
     @Test

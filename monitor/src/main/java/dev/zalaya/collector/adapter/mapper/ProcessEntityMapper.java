@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class ProcessMapper {
+public class ProcessEntityMapper {
 
     public Process toDomain(ProcessEntity entity) {
         return new Process(

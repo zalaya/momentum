@@ -1,6 +1,6 @@
 package dev.zalaya.collector.adapter.persistence.repository;
 
-import dev.zalaya.collector.adapter.mapper.ProcessMapper;
+import dev.zalaya.collector.adapter.mapper.ProcessEntityMapper;
 import dev.zalaya.collector.domain.model.Process;
 import dev.zalaya.collector.domain.port.outbound.ProcessRepository;
 import dev.zalaya.collector.infrastructure.persistence.entity.ProcessEntity;
@@ -15,9 +15,9 @@ import java.util.Optional;
 public class ProcessRepositoryAdapter implements ProcessRepository {
 
     private final ProcessJpaRepository repository;
-    private final ProcessMapper mapper;
+    private final ProcessEntityMapper mapper;
 
-    public ProcessRepositoryAdapter(ProcessJpaRepository repository, ProcessMapper mapper) {
+    public ProcessRepositoryAdapter(ProcessJpaRepository repository, ProcessEntityMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
     }
@@ -37,46 +37,19 @@ public class ProcessRepositoryAdapter implements ProcessRepository {
     }
 
     @Override
-    public Process findByName(String name) {
-        Optional<ProcessEntity> processEntity = repository.findByName(name);
-
-        return processEntity.map(mapper::toDomain).orElse(null);
-    }
-
-    @Override
-    public Process findByPath(String path) {
-        Optional<ProcessEntity> processEntity = repository.findByPath(path);
-
-        return processEntity.map(mapper::toDomain).orElse(null);
-    }
-
-    @Override
-    public List<Process> findByMemoryLessThan(Long memory) {
-        List<ProcessEntity> processEntity = repository.findByMemoryLessThan(memory);
-
-        return mapper.toDomain(processEntity);
-    }
-
-    @Override
-    public List<Process> findByMemoryGreaterThan(Long memory) {
-        List<ProcessEntity> processEntity = repository.findByMemoryGreaterThan(memory);
-
-        return mapper.toDomain(processEntity);
-    }
-
-    @Override
-    public List<Process> findByMemoryBetween(Long minimumMemory, Long maximumMemory) {
-        List<ProcessEntity> processEntity = repository.findByMemoryBetween(minimumMemory, maximumMemory);
-
-        return mapper.toDomain(processEntity);
-    }
-
-    @Override
     public Process save(Process process) {
         ProcessEntity processEntity = mapper.toEntity(process);
-        ProcessEntity savedEntity = repository.save(processEntity);
+        ProcessEntity savedProcessEntity = repository.save(processEntity);
 
-        return mapper.toDomain(savedEntity);
+        return mapper.toDomain(savedProcessEntity);
+    }
+
+    @Override
+    public List<Process> saveAll(List<Process> processes) {
+        List<ProcessEntity> processEntities = mapper.toEntity(processes);
+        List<ProcessEntity> savedProcessEntities = repository.saveAll(processEntities);
+
+        return mapper.toDomain(savedProcessEntities);
     }
 
 }
