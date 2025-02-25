@@ -27,9 +27,6 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>2.18.0</version>
-                <configuration>
-                    <processAllModules>true</processAllModules>
-                </configuration>
             </plugin>
         </plugins>
     </build>
