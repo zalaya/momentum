@@ -14,17 +14,7 @@ public class EventDispatcherStrategy {
     private final EventDispatcherStrategyDefinition definition;
 
     public <T> void dispatch(Event<T> event) {
-        getDispatcher().dispatch(event);
-    }
-
-    private EventDispatcher getDispatcher() {
-        for (EventDispatcher dispatcher : definition.getDispatchers()) {
-            if (dispatcher.supports(definition.getType().name())) {
-                return dispatcher;
-            }
-        }
-
-        throw new IllegalStateException("No event dispatcher found");
+        definition.getDispatcher().dispatch(event);
     }
 
 }
