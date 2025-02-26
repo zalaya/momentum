@@ -6,13 +6,11 @@ public enum EventDispatcherType {
     DATABASE;
 
     public static EventDispatcherType fromString(String value) {
-        for (EventDispatcherType type : values()) {
-            if (type.name().equalsIgnoreCase(value)) {
-                return type;
-            }
+        try {
+            return EventDispatcherType.valueOf(value.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid dispatcher strategy");
         }
-
-        throw new IllegalArgumentException("Invalid dispatcher strategy");
     }
 
 }
