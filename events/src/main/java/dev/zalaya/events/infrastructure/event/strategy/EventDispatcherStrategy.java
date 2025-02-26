@@ -1,15 +1,15 @@
-package dev.zalaya.events.infrastructure.event;
+package dev.zalaya.events.infrastructure.event.strategy;
 
 import dev.zalaya.events.domain.model.Event;
+import dev.zalaya.events.infrastructure.event.EventDispatcher;
 import dev.zalaya.events.infrastructure.event.enumerator.EventDispatcherType;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@Getter
 @RequiredArgsConstructor
 public class EventDispatcherStrategy {
 
