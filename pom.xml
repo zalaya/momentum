@@ -13,6 +13,7 @@
 
     <modules>
         <module>acquisition</module>
+        <module>events</module>
     </modules>
 
     <properties>
@@ -25,7 +26,7 @@
         <dependencies>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
+                <artifactId>spring-boot-starter</artifactId>
                 <version>3.4.3</version>
                 <scope>compile</scope>
             </dependency>

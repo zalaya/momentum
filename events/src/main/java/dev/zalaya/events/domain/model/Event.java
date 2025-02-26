@@ -1,4 +1,4 @@
-package dev.zalaya.acquisition.domain.model;
+package dev.zalaya.events.domain.model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
