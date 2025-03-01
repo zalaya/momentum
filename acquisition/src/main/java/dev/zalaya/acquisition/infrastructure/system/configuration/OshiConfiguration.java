@@ -1,6 +1,5 @@
 package dev.zalaya.acquisition.infrastructure.system.configuration;
 
-import dev.zalaya.acquisition.infrastructure.system.context.OshiContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,11 +12,11 @@ public class OshiConfiguration {
     public OshiContext defineOshiContextBean() {
         SystemInfo systemInfo = new SystemInfo();
 
-        return new OshiContext(
-            systemInfo,
-            systemInfo.getOperatingSystem(),
-            systemInfo.getHardware()
-        );
+        return OshiContext.builder()
+            .systemInfo(systemInfo)
+            .operatingSystem(systemInfo.getOperatingSystem())
+            .hardwareAbstractionLayer(systemInfo.getHardware())
+            .build();
     }
 
 }
