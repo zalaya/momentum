@@ -1,4 +1,4 @@
-package dev.zalaya.acquisition.infrastructure.oshi.mapper;
+package dev.zalaya.acquisition.infrastructure.system.mapper;
 
 import dev.zalaya.acquisition.domain.model.Process;
 
@@ -9,7 +9,7 @@ import org.mapstruct.Mapping;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface ProcessMapper {
+public interface OSProcessMapper {
 
     @Mapping(target = "pid", source = "processID")
     @Mapping(target = "threads", source = "threadCount")

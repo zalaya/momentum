@@ -1,5 +1,6 @@
-package dev.zalaya.acquisition.infrastructure.oshi.configuration;
+package dev.zalaya.acquisition.infrastructure.system.configuration;
 
+import dev.zalaya.acquisition.infrastructure.system.context.OshiContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

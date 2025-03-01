@@ -1,4 +1,4 @@
-package dev.zalaya.acquisition.infrastructure.oshi.configuration;
+package dev.zalaya.acquisition.infrastructure.system.context;
 
 import lombok.Value;
 
