@@ -1,7 +1,6 @@
 package dev.zalaya.acquisition.infrastructure.system.mapper;
 
 import dev.zalaya.acquisition.domain.model.Process;
-import dev.zalaya.acquisition.infrastructure.system.mocks.OSProcessMockFactory;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,7 +12,8 @@ import oshi.software.os.OSProcess;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static dev.zalaya.acquisition.infrastructure.system.mocks.OSProcessMockFactory.create;
+import static dev.zalaya.acquisition.infrastructure.system.assertions.ProcessAssertionFactory.expect;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
@@ -25,36 +25,28 @@ class OSProcessMapperTest {
     @Test
     void shouldMapOSProcessToProcess() {
         // Arrange
-        OSProcess osProcess = OSProcessMockFactory.create(1, "Process", "path/to/process", 0.75, 5);
+        OSProcess osProcess = create(1, "Process", "path/to/process", 0.75, 5);
 
         // Act
         Process process = mapper.toProcess(osProcess);
 
         // Assert
-        assertProcess(process, 1, "Process", "path/to/process", 75.0, 5);
+        expect(process, 1, "Process", "path/to/process", 75.0, 5);
     }
 
     @Test
     void shouldMapOSProcessesToProcesses() {
         // Arrange
-        OSProcess osProcess1 = OSProcessMockFactory.create(1, "Process1", "path/to/process1", 0.5, 10);
-        OSProcess osProcess2 = OSProcessMockFactory.create(2, "Process2", "path/to/process2", 0.75, 5);
+        OSProcess osProcess1 = create(1, "Process1", "path/to/process1", 0.5, 10);
+        OSProcess osProcess2 = create(2, "Process2", "path/to/process2", 0.75, 5);
         List<OSProcess> osProcesses = List.of(osProcess1, osProcess2);
 
         // Act
         List<Process> processes = mapper.toProcesses(osProcesses);
 
         // Assert
-        assertProcess(processes.get(0), 1, "Process1", "path/to/process1", 50.0, 10);
-        assertProcess(processes.get(1), 2, "Process2", "path/to/process2", 75.0, 5);
-    }
-
-    private void assertProcess(Process process, Integer pid, String name, String path, Double usage, Integer threads) {
-        assertEquals(pid, process.getPid());
-        assertEquals(name, process.getName());
-        assertEquals(path, process.getPath());
-        assertEquals(usage, process.getUsage());
-        assertEquals(threads, process.getThreads());
+        expect(processes.get(0), 1, "Process1", "path/to/process1", 50.0, 10);
+        expect(processes.get(1), 2, "Process2", "path/to/process2", 75.0, 5);
     }
 
 }

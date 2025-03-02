@@ -8,15 +8,15 @@ import static org.mockito.Mockito.when;
 public class OSProcessMockFactory {
 
     public static OSProcess create(Integer pid, String name, String path, Double usage, Integer threads) {
-        OSProcess osProcessMock = mock(OSProcess.class);
+        OSProcess mock = mock(OSProcess.class);
 
-        when(osProcessMock.getProcessID()).thenReturn(pid);
-        when(osProcessMock.getName()).thenReturn(name);
-        when(osProcessMock.getPath()).thenReturn(path);
-        when(osProcessMock.getProcessCpuLoadCumulative()).thenReturn(usage);
-        when(osProcessMock.getThreadCount()).thenReturn(threads);
+        when(mock.getProcessID()).thenReturn(pid);
+        when(mock.getName()).thenReturn(name);
+        when(mock.getPath()).thenReturn(path);
+        when(mock.getProcessCpuLoadCumulative()).thenReturn(usage);
+        when(mock.getThreadCount()).thenReturn(threads);
 
-        return osProcessMock;
+        return mock;
     }
 
 }
