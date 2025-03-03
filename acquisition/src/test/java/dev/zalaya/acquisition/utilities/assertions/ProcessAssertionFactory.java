@@ -1,4 +1,4 @@
-package dev.zalaya.acquisition.infrastructure.system.assertions;
+package dev.zalaya.acquisition.utilities.assertions;
 
 import dev.zalaya.acquisition.domain.model.Process;
 

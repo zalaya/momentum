@@ -1,4 +1,4 @@
-package dev.zalaya.acquisition.infrastructure.system.mocks;
+package dev.zalaya.acquisition.utilities.mocks;
 
 import oshi.software.os.OSProcess;
 

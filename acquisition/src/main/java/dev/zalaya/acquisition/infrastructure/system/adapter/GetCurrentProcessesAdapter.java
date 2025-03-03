@@ -4,13 +4,13 @@ import dev.zalaya.acquisition.domain.model.Process;
 import dev.zalaya.acquisition.domain.port.outbound.GetCurrentProcessesUseCase;
 import dev.zalaya.acquisition.infrastructure.system.mapper.OSProcessMapper;
 
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 import oshi.software.os.OperatingSystem;
 
 import java.util.List;
 
-@Getter
+@Component
 @RequiredArgsConstructor
 public class GetCurrentProcessesAdapter implements GetCurrentProcessesUseCase {
 

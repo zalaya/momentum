@@ -12,8 +12,8 @@ import oshi.software.os.OSProcess;
 
 import java.util.List;
 
-import static dev.zalaya.acquisition.infrastructure.system.mocks.OSProcessMockFactory.create;
-import static dev.zalaya.acquisition.infrastructure.system.assertions.ProcessAssertionFactory.expect;
+import static dev.zalaya.acquisition.utilities.mocks.OSProcessMockFactory.create;
+import static dev.zalaya.acquisition.utilities.assertions.ProcessAssertionFactory.expect;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
