@@ -1,21 +1,16 @@
-package dev.zalaya.persistence.entity;
+package dev.zalaya.acquisition.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "processes", uniqueConstraints = {
     @UniqueConstraint(columnNames = {"name", "path"})
 })
-public class ProcessEntity {
+public class ProcessesTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
