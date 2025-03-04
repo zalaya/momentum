@@ -3,7 +3,6 @@ package dev.zalaya.acquisition.infrastructure.system.mapper;
 import dev.zalaya.acquisition.domain.model.Process;
 
 import oshi.software.os.OSProcess;
-
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

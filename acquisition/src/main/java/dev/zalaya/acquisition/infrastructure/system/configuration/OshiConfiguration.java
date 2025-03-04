@@ -2,7 +2,6 @@ package dev.zalaya.acquisition.infrastructure.system.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import oshi.SystemInfo;
 
 @Configuration

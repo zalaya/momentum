@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
     @Index(name = "idx_process_id", columnList = "process_id"),
     @Index(name = "idx_created_at", columnList = "created_at")
 })
-public class ProcessHistoryTable {
+public class HistoricProcessEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class ProcessHistoryTable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "process_id", nullable = false)
-    private ProcessesTable process;
+    private ProcessEntity process;
 
     @Column(name = "usage", nullable = false)
     private Double usage;

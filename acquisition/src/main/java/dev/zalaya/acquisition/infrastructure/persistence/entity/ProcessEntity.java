@@ -7,10 +7,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "processes", uniqueConstraints = {
-    @UniqueConstraint(columnNames = {"name", "path"})
-})
-public class ProcessesTable {
+@Table(name = "processes")
+public class ProcessEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
