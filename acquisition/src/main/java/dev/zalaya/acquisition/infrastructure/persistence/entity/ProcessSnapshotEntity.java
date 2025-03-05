@@ -6,11 +6,11 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "process_history", indexes = {
+@Table(name = "process_snapshots", indexes = {
     @Index(name = "idx_process_id", columnList = "process_id"),
     @Index(name = "idx_created_at", columnList = "created_at")
 })
-public class HistoricProcessEntity {
+public class ProcessSnapshotEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,0 +1,3 @@
+- Administrar los plugins que tengo, ahora mismo están todos en el padre y yo creo que eso se puede evitar de alguna manera.
+- Hacer TDD y crear los repositorios que son necesarios para la persistencia.
+- Crear el servicio de adquisición.

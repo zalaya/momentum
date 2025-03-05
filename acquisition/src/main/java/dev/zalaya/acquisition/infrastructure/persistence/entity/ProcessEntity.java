@@ -24,6 +24,9 @@ public class ProcessEntity {
     @Column(name = "path", nullable = false, length = 510)
     private String path;
 
+    @Column(name = "is_active", nullable = false)
+    private Boolean isActive = false;
+
     @CreationTimestamp
     @Column(name = "first_seen", nullable = false, updatable = false)
     private LocalDateTime firstSeen;

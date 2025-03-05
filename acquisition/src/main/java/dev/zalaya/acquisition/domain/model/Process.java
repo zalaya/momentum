@@ -2,13 +2,17 @@ package dev.zalaya.acquisition.domain.model;
 
 import lombok.Value;
 
+import java.time.LocalDateTime;
+
 @Value
 public class Process {
 
     Integer pid;
     String name;
     String path;
-    Double usage;
-    Integer threads;
+    Boolean isActive;
+    LocalDateTime firstSeen;
+    LocalDateTime lastSeen;
+    Integer occurrences;
 
 }
