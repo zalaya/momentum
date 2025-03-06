@@ -18,6 +18,7 @@
         <dependency>
             <groupId>dev.zalaya.momentum</groupId>
             <artifactId>momentum-acquisition-infrastructure</artifactId>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
