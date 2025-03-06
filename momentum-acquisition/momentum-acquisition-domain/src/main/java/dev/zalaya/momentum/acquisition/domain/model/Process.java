@@ -10,8 +10,8 @@ public class Process {
     Integer pid;
     String name;
     String path;
-    Double memory;
     Double cpu;
+    Double memory;
     Integer threads;
 
 }
