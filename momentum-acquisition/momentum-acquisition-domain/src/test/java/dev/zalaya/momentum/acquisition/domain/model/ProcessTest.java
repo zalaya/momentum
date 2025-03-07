@@ -3,6 +3,7 @@ package dev.zalaya.momentum.acquisition.domain.model;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,7 +20,7 @@ class ProcessTest {
     }
 
     @Test
-    void shouldRetrieveFieldsWithGetters() {
+    void shouldRetrieveFieldValuesUsingGetters() {
         // Arrange
         Process process = new Process(1234, "process.exe", "path/to/process", 12.34, 43.21, 5);
 
@@ -44,7 +45,18 @@ class ProcessTest {
     }
 
     @Test
-    void shouldReturnTrueWhenComparingTwoSameInstances() {
+    void shouldEnsureFieldsDoNotHaveSetters() {
+        // Arrange
+        Method[] methods = Process.class.getDeclaredMethods();
+
+        // Assert
+        for (Method method : methods) {
+            assertFalse(method.getName().startsWith("set"));
+        }
+    }
+
+    @Test
+    void shouldReturnTrueWhenComparingTwoEqualInstances() {
         Process process1 = new Process(1234, "process.exe", "path/to/process", 12.34, 43.21, 5);
         Process process2 = new Process(4321, "process.exe", "path/to/process", 43.21, 12.34, 10);
 
