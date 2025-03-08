@@ -15,6 +15,21 @@
     <artifactId>momentum-acquisition-infrastructure</artifactId>
 
     <dependencies>
+        <!-- LOMBOK -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- SPRING FRAMEWORK -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- MOMENTUM -->
         <dependency>
             <groupId>dev.zalaya.momentum</groupId>
             <artifactId>momentum-acquisition-application</artifactId>

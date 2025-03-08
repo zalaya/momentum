@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS processes (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    pid INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    path VARCHAR(1024) NOT NULL,
+    cpu DECIMAL(10,2),
+    memory DECIMAL(10,2),
+    threads INT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);
