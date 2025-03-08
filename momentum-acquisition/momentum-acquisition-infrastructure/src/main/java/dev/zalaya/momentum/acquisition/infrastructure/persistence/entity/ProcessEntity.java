@@ -1,11 +1,17 @@
 package dev.zalaya.momentum.acquisition.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
 @Table(name = "processes")
 public class ProcessEntity {
 
