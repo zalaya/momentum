@@ -15,7 +15,7 @@ class ProcessEntityMapperTest {
     private final ProcessEntityMapper mapper = Mappers.getMapper(ProcessEntityMapper.class);
 
     @Test
-    void givenProcess_WhenMappingToEntity_thenFieldsAreMappedCorrectly() {
+    void givenDomainProcess_whenMappedToEntity_thenFieldsAreCorrectlyTransferred() {
         // Given
         Process process = new Process(1234, "process.exe", "path/to/process", 12.34, 43.21, 5);
 
@@ -23,6 +23,10 @@ class ProcessEntityMapperTest {
         ProcessEntity processEntity = mapper.toEntity(process);
 
         // Then
+        assertDomainMatchesEntity(process, processEntity);
+    }
+
+    private void assertDomainMatchesEntity(Process process, ProcessEntity processEntity) {
         assertEquals(process.getPid(), processEntity.getPid());
         assertEquals(process.getName(), processEntity.getName());
         assertEquals(process.getPath(), processEntity.getPath());
@@ -32,7 +36,7 @@ class ProcessEntityMapperTest {
     }
 
     @Test
-    void givenProcessEntity_WhenMappingToDomain_thenFieldsAreMappedCorrectly() {
+    void givenEntityProcess_whenMappedToDomain_thenFieldsAreCorrectlyTransferred() {
         // Given
         ProcessEntity processEntity = new ProcessEntity(1L, 1234, "process.exe", "path/to/process", 12.34, 43.21, 5, LocalDateTime.now());
 
@@ -40,6 +44,10 @@ class ProcessEntityMapperTest {
         Process process = mapper.toDomain(processEntity);
 
         // Then
+        assertEntityMatchesDomain(processEntity, process);
+    }
+
+    private static void assertEntityMatchesDomain(ProcessEntity processEntity, Process process) {
         assertEquals(processEntity.getPid(), process.getPid());
         assertEquals(processEntity.getName(), process.getName());
         assertEquals(processEntity.getPath(), process.getPath());
