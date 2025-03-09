@@ -13,4 +13,27 @@
     </parent>
 
     <artifactId>momentum-acquisition-infrastructure</artifactId>
+
+    <dependencies>
+        <!-- OSHI -->
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- SPRING FRAMEWORK -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- MOMENTUM -->
+        <dependency>
+            <groupId>dev.zalaya.momentum</groupId>
+            <artifactId>momentum-acquisition-application</artifactId>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 </project>

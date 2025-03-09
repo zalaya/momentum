@@ -15,6 +15,7 @@
     <artifactId>momentum-acquisition-boot</artifactId>
 
     <dependencies>
+        <!-- MOMENTUM -->
         <dependency>
             <groupId>dev.zalaya.momentum</groupId>
             <artifactId>momentum-acquisition-infrastructure</artifactId>
