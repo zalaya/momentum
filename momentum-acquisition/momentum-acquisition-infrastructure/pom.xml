@@ -15,6 +15,20 @@
     <artifactId>momentum-acquisition-infrastructure</artifactId>
 
     <dependencies>
+        <!-- JUNIT -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- MOCKITO -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <!-- OSHI -->
         <dependency>
             <groupId>com.github.oshi</groupId>
@@ -29,11 +43,30 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- MAPSTRUCT -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- LOMBOK -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- MOMENTUM -->
         <dependency>
             <groupId>dev.zalaya.momentum</groupId>
             <artifactId>momentum-acquisition-application</artifactId>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>dev.zalaya.momentum</groupId>
+            <artifactId>momentum-common-mock</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

@@ -12,6 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>momentum-common</module>
         <module>momentum-acquisition</module>
     </modules>
 
@@ -90,6 +91,16 @@
             </dependency>
 
             <!-- MOMENTUM -->
+            <dependency>
+                <groupId>dev.zalaya.momentum</groupId>
+                <artifactId>momentum-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dev.zalaya.momentum</groupId>
+                <artifactId>momentum-common-mock</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>dev.zalaya.momentum</groupId>
                 <artifactId>momentum-acquisition-domain</artifactId>

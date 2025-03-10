@@ -9,7 +9,7 @@ public class Process {
     String name;
     String path;
     Double cpu;
-    Double memory;
+    Long memory;
     Integer threads;
 
 }

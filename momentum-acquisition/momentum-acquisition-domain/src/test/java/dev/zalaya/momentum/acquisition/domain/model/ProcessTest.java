@@ -61,8 +61,8 @@ class ProcessTest {
     @Test
     void givenIdenticalProcesses_whenCompared_thenTheyAreEqual() {
         // Given
-        Process process1 = new Process(1234, "process.exe", "path/to/process", 12.34, 43.21, 5);
-        Process process2 = new Process(1234, "process.exe", "path/to/process", 12.34, 43.21, 5);
+        Process process1 = new Process(1234, "process.exe", "path/to/process", 0.5, 2048L, 5);
+        Process process2 = new Process(1234, "process.exe", "path/to/process", 0.5, 2048L, 5);
 
         // When & Then
         assertEquals(process1, process2);
@@ -72,8 +72,8 @@ class ProcessTest {
     @Test
     void givenDifferentProcesses_whenCompared_thenTheyAreNotEqual() {
         // Given
-        Process process1 = new Process(1234, "process1.exe", "path/to/process1", 12.34, 43.21, 5);
-        Process process2 = new Process(4321, "process2.exe", "path/to/process2", 43.21, 12.34, 10);
+        Process process1 = new Process(1234, "process1.exe", "path/to/process1", 0.5, 2048L, 5);
+        Process process2 = new Process(4321, "process2.exe", "path/to/process2", 0.75, 2048L, 10);
 
         // When & Then
         assertNotEquals(process1, process2);
