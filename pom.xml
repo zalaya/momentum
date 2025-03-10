@@ -12,7 +12,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>momentum-common</module>
         <module>momentum-acquisition</module>
     </modules>
 
@@ -59,7 +58,7 @@
                 <version>${lombok.version}</version>
             </dependency>
 
-            <!-- SPRING FRAMEWORK -->
+            <!-- SPRING -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
@@ -91,16 +90,6 @@
             </dependency>
 
             <!-- MOMENTUM -->
-            <dependency>
-                <groupId>dev.zalaya.momentum</groupId>
-                <artifactId>momentum-common</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>dev.zalaya.momentum</groupId>
-                <artifactId>momentum-common-mock</artifactId>
-                <version>${project.version}</version>
-            </dependency>
             <dependency>
                 <groupId>dev.zalaya.momentum</groupId>
                 <artifactId>momentum-acquisition-domain</artifactId>
