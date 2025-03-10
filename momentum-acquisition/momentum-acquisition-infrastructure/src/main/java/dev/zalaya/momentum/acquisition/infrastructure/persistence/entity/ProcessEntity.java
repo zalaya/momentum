@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Table(name = "processes")
+@NoArgsConstructor
 public class ProcessEntity {
 
     @Id

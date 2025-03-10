@@ -14,11 +14,9 @@ public interface ProcessEntityMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     ProcessEntity toEntity(Process process);
-
     List<ProcessEntity> toEntity(List<Process> processes);
 
     Process toDomain(ProcessEntity processEntity);
-
     List<Process> toDomain(List<ProcessEntity> processEntities);
 
 }
