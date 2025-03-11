@@ -8,9 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 class ProcessEntityMapperTest {
 
@@ -22,39 +23,33 @@ class ProcessEntityMapperTest {
     }
 
     @Test
-    void givenProcess_whenMapping_thenReturnProcessEntity() {
+    void givenProcessEntities_whenToDomain_thenReturnDomainProcesses() {
         // Given
-        Process process = new Process(1234, "process.exe", "path/to/process", 50.0, 2048L, 5);
+        ProcessEntity processEntity1 = buildProcessEntity("process1.exe", "path/to/process1");
+        ProcessEntity processEntity2 = buildProcessEntity("process2.exe", "path/to/process2");
 
         // When
-        ProcessEntity processEntity = mapper.toEntity(process);
+        List<Process> processes = mapper.toDomain(List.of(processEntity1, processEntity2));
 
         // Then
-        assertNull(processEntity.getId());
-        assertEquals(1234, processEntity.getPid());
-        assertEquals("process.exe", processEntity.getName());
-        assertEquals("path/to/process", processEntity.getPath());
-        assertEquals(50.0, processEntity.getCpu());
-        assertEquals(2048L, processEntity.getMemory());
-        assertEquals(5, processEntity.getThreads());
-        assertNull(processEntity.getCreatedAt());
+        assertProcessFields(processes.get(0), "process1.exe", "path/to/process1");
+        assertProcessFields(processes.get(1), "process2.exe", "path/to/process2");
     }
 
-    @Test
-    void givenProcessEntity_whenMapping_thenReturnProcess() {
-        // Given
-        ProcessEntity processEntity = new ProcessEntity(1L, 1234, "process.exe", "path/to/process", 50.0, 2048L, 5, LocalDateTime.now());
+    private static void assertProcessFields(Process process, String name, String path) {
+        assertAll(
+            () -> assertEquals(1234, process.getPid()),
+            () -> assertEquals(name, process.getName()),
+            () -> assertEquals(path, process.getPath()),
+            () -> assertEquals(50.0, process.getCpu()),
+            () -> assertEquals(2048L, process.getMemory()),
+            () -> assertEquals(5, process.getThreads())
+        );
+    }
 
-        // When
-        Process process = mapper.toDomain(processEntity);
 
-        // Then
-        assertEquals(1234, process.getPid());
-        assertEquals("process.exe", process.getName());
-        assertEquals("path/to/process", process.getPath());
-        assertEquals(50.0, process.getCpu());
-        assertEquals(2048L, process.getMemory());
-        assertEquals(5, process.getThreads());
+    private static ProcessEntity buildProcessEntity(String name, String path) {
+        return new ProcessEntity(1L, 1234, name, path, 50.0, 2048L, 5, LocalDateTime.now());
     }
 
 }

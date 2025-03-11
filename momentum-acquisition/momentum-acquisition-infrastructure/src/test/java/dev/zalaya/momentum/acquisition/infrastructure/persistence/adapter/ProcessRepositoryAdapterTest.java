@@ -28,14 +28,22 @@ class ProcessRepositoryAdapterTest {
     @Test
     void givenProcesses_whenSaveAll_thenCallsMapperAndRepository() {
         // Given
-        when(mapper.toEntity(anyList())).thenReturn(List.of());
-        when(repository.saveAll(anyList())).thenReturn(List.of());
-        when(mapper.toDomain(anyList())).thenReturn(List.of());
+        configureProcessRepositoryAdapterMocks();
 
         // When
         adapter.saveAll(List.of());
 
         // Assert
+        verifySaveAllInteractions();
+    }
+
+    private void configureProcessRepositoryAdapterMocks() {
+        when(mapper.toEntity(anyList())).thenReturn(List.of());
+        when(repository.saveAll(anyList())).thenReturn(List.of());
+        when(mapper.toDomain(anyList())).thenReturn(List.of());
+    }
+
+    private void verifySaveAllInteractions() {
         verify(mapper).toEntity(anyList());
         verify(repository).saveAll(anyList());
         verify(mapper).toDomain(anyList());
