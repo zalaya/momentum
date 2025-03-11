@@ -25,22 +25,22 @@ class ProcessEntityMapperTest {
     @Test
     void givenProcessEntities_whenToDomain_thenReturnDomainProcesses() {
         // Given
-        ProcessEntity processEntity1 = buildProcessEntity("process1.exe", "path/to/process1");
-        ProcessEntity processEntity2 = buildProcessEntity("process2.exe", "path/to/process2");
+        ProcessEntity processEntity1 = buildProcessEntity();
+        ProcessEntity processEntity2 = buildProcessEntity();
 
         // When
         List<Process> processes = mapper.toDomain(List.of(processEntity1, processEntity2));
 
         // Then
-        assertProcessFields(processes.get(0), "process1.exe", "path/to/process1");
-        assertProcessFields(processes.get(1), "process2.exe", "path/to/process2");
+        assertProcessFields(processes.get(0));
+        assertProcessFields(processes.get(1));
     }
 
-    private static void assertProcessFields(Process process, String name, String path) {
+    private static void assertProcessFields(Process process) {
         assertAll(
             () -> assertEquals(1234, process.getPid()),
-            () -> assertEquals(name, process.getName()),
-            () -> assertEquals(path, process.getPath()),
+            () -> assertEquals("process.exe", process.getName()),
+            () -> assertEquals("path/to/process", process.getPath()),
             () -> assertEquals(50.0, process.getCpu()),
             () -> assertEquals(2048L, process.getMemory()),
             () -> assertEquals(5, process.getThreads())
@@ -48,8 +48,8 @@ class ProcessEntityMapperTest {
     }
 
 
-    private static ProcessEntity buildProcessEntity(String name, String path) {
-        return new ProcessEntity(1L, 1234, name, path, 50.0, 2048L, 5, LocalDateTime.now());
+    private static ProcessEntity buildProcessEntity() {
+        return new ProcessEntity(1L, 1234, "process.exe", "path/to/process", 50.0, 2048L, 5, LocalDateTime.now());
     }
 
 }

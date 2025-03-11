@@ -7,9 +7,11 @@ import dev.zalaya.momentum.acquisition.infrastructure.persistence.entity.mapper.
 import dev.zalaya.momentum.acquisition.infrastructure.persistence.repository.ProcessJpaRepository;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 @RequiredArgsConstructor
 public class ProcessRepositoryAdapter implements ProcessRepository {
 

@@ -5,10 +5,11 @@ import dev.zalaya.momentum.acquisition.infrastructure.persistence.entity.Process
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ProcessEntityMapper {
 
     @Mapping(target = "id", ignore = true)
