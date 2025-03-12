@@ -31,7 +31,7 @@ public class ProcessEntity {
     @Column(name = "path", nullable = false, length = 510)
     private String path;
 
-    @Column(name = "cpu", nullable = false, precision = 10, scale = 2)
+    @Column(name = "cpu", nullable = false)
     private Double cpu;
 
     @Column(name = "memory", nullable = false)

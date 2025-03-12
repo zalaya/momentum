@@ -2,11 +2,11 @@ openapi: 3.0.3
 
 info:
   title: Momentum Acquisition API
-  version: "1.0.0"
+  version: '1.0.0'
   description: API to manage momentum.
 
 servers:
-  - url: http://localhost
+  - url: 'http://localhost:8080/'
 
 paths:
   /processes:

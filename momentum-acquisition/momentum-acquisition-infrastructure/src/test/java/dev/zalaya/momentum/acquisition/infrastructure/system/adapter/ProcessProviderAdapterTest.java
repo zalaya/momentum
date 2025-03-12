@@ -21,7 +21,7 @@ class ProcessProviderAdapterTest {
 
     @BeforeEach
     void beforeEach() {
-        context = new OshiContext(mock(SystemInfo.class), mock(OperatingSystem.class));
+        context = new OshiContext();
         mapper = mock(OSProcessMapper.class);
 
         adapter = new ProcessProviderAdapter(context, mapper);
