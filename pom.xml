@@ -17,7 +17,10 @@
 
     <properties>
         <!-- DEPENDENCIES -->
-        <spring-boot.version>3.4.3</spring-boot.version>
+        <spring-boot-starter-web.version>3.4.3</spring-boot-starter-web.version>
+        <spring-boot-starter-data-jpa.version>3.4.3</spring-boot-starter-data-jpa.version>
+        <spring-boot-starter-test.version>3.4.3</spring-boot-starter-test.version>
+        <spring-boot-starter.version>3.4.3</spring-boot-starter.version>
         <lombok.version>1.18.36</lombok.version>
         <junit-jupiter-api.version>5.12.0</junit-jupiter-api.version>
         <junit-jupiter-engine.version>5.12.0</junit-jupiter-engine.version>
@@ -68,17 +71,22 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-                <version>${spring-boot.version}</version>
+                <version>${spring-boot-starter-web.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-jpa</artifactId>
-                <version>${spring-boot.version}</version>
+                <version>${spring-boot-starter-data-jpa.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
-                <version>${spring-boot.version}</version>
+                <version>${spring-boot-starter-test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot-starter.version}</version>
             </dependency>
 
             <!-- OSHI -->

@@ -17,6 +17,7 @@
 
     <modules>
         <module>momentum-acquisition-domain</module>
+        <module>momentum-acquisition-application</module>
         <module>momentum-acquisition-infrastructure</module>
     </modules>
 

@@ -12,7 +12,7 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>momentum-acquisition-infrastructure</artifactId>
+    <artifactId>momentum-acquisition-application</artifactId>
 
     <dependencies>
         <!-- JUNIT -->
@@ -29,13 +29,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- MAPSTRUCT -->
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-            <scope>compile</scope>
-        </dependency>
-
         <!-- LOMBOK -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -46,26 +39,14 @@
         <!-- SPRING -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- OSHI -->
-        <dependency>
-            <groupId>com.github.oshi</groupId>
-            <artifactId>oshi-core</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
             <scope>compile</scope>
         </dependency>
 
         <!-- MOMENTUM -->
         <dependency>
             <groupId>dev.zalaya.momentum</groupId>
-            <artifactId>momentum-acquisition-application</artifactId>
+            <artifactId>momentum-acquisition-domain</artifactId>
             <scope>compile</scope>
         </dependency>
     </dependencies>
