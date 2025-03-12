@@ -1,8 +1,9 @@
-package dev.zalaya.momentum.acquisition.infrastructure.persistence.entity.mapper;
+package dev.zalaya.momentum.acquisition.infrastructure.persistence.mapper;
 
 import dev.zalaya.momentum.acquisition.domain.model.Process;
 import dev.zalaya.momentum.acquisition.infrastructure.persistence.entity.ProcessEntity;
 
+import dev.zalaya.momentum.acquisition.infrastructure.persistence.mapper.ProcessEntityMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;

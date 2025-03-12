@@ -1,4 +1,4 @@
-package dev.zalaya.momentum.acquisition.infrastructure.persistence.entity.mapper;
+package dev.zalaya.momentum.acquisition.infrastructure.persistence.mapper;
 
 import dev.zalaya.momentum.acquisition.domain.model.Process;
 import dev.zalaya.momentum.acquisition.infrastructure.persistence.entity.ProcessEntity;

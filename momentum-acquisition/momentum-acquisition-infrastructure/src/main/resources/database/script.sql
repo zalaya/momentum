@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS `momentum`;
+USE `momentum`;
+
+CREATE TABLE `processes` (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    pid INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    path VARCHAR(510) NOT NULL,
+    cpu DECIMAL(10,2) NOT NULL,
+    memory BIGINT NOT NULL,
+    threads INT NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

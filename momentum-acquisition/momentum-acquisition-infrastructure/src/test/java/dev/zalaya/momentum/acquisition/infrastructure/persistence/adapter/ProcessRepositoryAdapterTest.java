@@ -1,6 +1,6 @@
 package dev.zalaya.momentum.acquisition.infrastructure.persistence.adapter;
 
-import dev.zalaya.momentum.acquisition.infrastructure.persistence.entity.mapper.ProcessEntityMapper;
+import dev.zalaya.momentum.acquisition.infrastructure.persistence.mapper.ProcessEntityMapper;
 import dev.zalaya.momentum.acquisition.infrastructure.persistence.repository.ProcessJpaRepository;
 
 import org.junit.jupiter.api.BeforeEach;

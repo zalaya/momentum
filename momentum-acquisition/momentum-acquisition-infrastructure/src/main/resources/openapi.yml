@@ -11,6 +11,9 @@ servers:
 paths:
   /processes:
     get:
+      tags:
+        - Process
+      operationId: getProcesses
       summary: Get list of processes
       description: Returns a JSON array of processes.
       responses:

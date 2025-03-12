@@ -3,7 +3,7 @@ package dev.zalaya.momentum.acquisition.infrastructure.persistence.adapter;
 import dev.zalaya.momentum.acquisition.domain.model.Process;
 import dev.zalaya.momentum.acquisition.domain.port.outbound.ProcessRepository;
 import dev.zalaya.momentum.acquisition.infrastructure.persistence.entity.ProcessEntity;
-import dev.zalaya.momentum.acquisition.infrastructure.persistence.entity.mapper.ProcessEntityMapper;
+import dev.zalaya.momentum.acquisition.infrastructure.persistence.mapper.ProcessEntityMapper;
 import dev.zalaya.momentum.acquisition.infrastructure.persistence.repository.ProcessJpaRepository;
 
 import lombok.RequiredArgsConstructor;
