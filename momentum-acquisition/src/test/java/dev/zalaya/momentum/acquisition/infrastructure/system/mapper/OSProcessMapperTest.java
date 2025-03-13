@@ -28,13 +28,26 @@ class OSProcessMapperTest {
         // Given
         OSProcess osProcess1 = buildOSProcess();
         OSProcess osProcess2 = buildOSProcess();
+        List<OSProcess> osProcesses = List.of(osProcess1, osProcess2);
 
         // When
-        List<Process> processes = mapper.toDomain(List.of(osProcess1, osProcess2));
+        List<Process> processes = mapper.toDomain(osProcesses);
 
         // Then
         assertProcessFields(processes.get(0));
         assertProcessFields(processes.get(1));
+    }
+
+    @Test
+    void givenOSProcess_whenToDomain_thenReturnDomainProcess() {
+        // Given
+        OSProcess osProcess = buildOSProcess();
+
+        // When
+        Process process = mapper.toDomain(osProcess);
+
+        // Then
+        assertProcessFields(process);
     }
 
     private static void assertProcessFields(Process process) {
