@@ -19,6 +19,7 @@ public class ProcessController implements ProcessApi {
     private final ProcessService service;
     private final ProcessDtoMapper mapper;
 
+    @Override
     public ResponseEntity<List<ProcessDto>> getProcesses() {
         List<Process> fetchedProcesses = service.getProcesses();
         List<ProcessDto> mappedProcessDtos = mapper.toDto(fetchedProcesses);
