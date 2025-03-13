@@ -1,4 +1,4 @@
-package dev.zalaya.momentum.acquisition.infrastructure.rest.mapper;
+package dev.zalaya.momentum.acquisition.application.rest.mapper;
 
 import dev.zalaya.momentum.acquisition.domain.model.Process;
 import dev.zalaya.momentum.acquisition.model.ProcessDto;

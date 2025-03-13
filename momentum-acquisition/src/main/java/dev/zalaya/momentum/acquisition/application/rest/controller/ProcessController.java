@@ -1,10 +1,10 @@
-package dev.zalaya.momentum.acquisition.infrastructure.rest.controller;
+package dev.zalaya.momentum.acquisition.application.rest.controller;
 
 import dev.zalaya.momentum.acquisition.application.service.ProcessService;
 import dev.zalaya.momentum.acquisition.domain.model.Process;
 import dev.zalaya.momentum.acquisition.api.ProcessApi;
 import dev.zalaya.momentum.acquisition.model.ProcessDto;
-import dev.zalaya.momentum.acquisition.infrastructure.rest.mapper.ProcessDtoMapper;
+import dev.zalaya.momentum.acquisition.application.rest.mapper.ProcessDtoMapper;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
