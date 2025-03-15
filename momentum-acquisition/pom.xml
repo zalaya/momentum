@@ -127,6 +127,7 @@
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <sourceFolder>src/java/main</sourceFolder>
                                 <useTags>true</useTags>
+                                <delegatePattern>true</delegatePattern>
                             </configOptions>
                         </configuration>
                     </execution>
