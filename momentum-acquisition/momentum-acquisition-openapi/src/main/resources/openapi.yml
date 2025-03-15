@@ -40,14 +40,27 @@ components:
       properties:
         pid:
           type: integer
+          description: Unique identifier for the process.
+          example: 1234
         name:
           type: string
+          description: Name of the executable process.
+          example: 'chrome.exe'
         path:
           type: string
+          description: Full path of the executable process.
+          example: 'C:\\Program Files\\Google\\Chrome\\chrome.exe'
         cpu:
           type: number
           format: double
+          description: Percentage of CPU usage by the process.
+          example: 12.5
         memory:
           type: integer
+          description: Amount of memory used in KB.
+          example: 256000
         threads:
           type: integer
+          description: Number of threads associated with the process.
+          example: 18
+  
